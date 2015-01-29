@@ -55,6 +55,9 @@ if node[:ssh_keys]
           group user['gid'] || user['uid']
           mode "0600"
           variables :ssh_keys => ssh_keys
+	        retries 3
+	        retry_delay 5
+          ignore_failure true
         end
       end
     end
