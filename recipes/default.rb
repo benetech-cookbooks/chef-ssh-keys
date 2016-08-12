@@ -45,6 +45,7 @@ if node[:ssh_keys]
             owner user['uid']
             group user['gid'] || user['uid']
             mode "0700"
+            ignore_failure true
           end
         end
 
